@@ -1,16 +1,4 @@
 //======================================================================
-/******************* DO NOT USE THIS FILE!!! ***************************
-
-    Copy both of the configuration files from the TEVO Tarantula folder
-    in the example configurations folder into the main Marlin folder.
-
-    This file is set up for my specific printer and probably will not
-    work on your printer!
-
-***********************************************************************/
-//======================================================================
-
-//======================================================================
 /**************** TEVO TARANTULA EASY CONFIG ***************************
             Original idea by terryb.print3d@gmail.com
              Modified by jb.github@rcairgallery.com
@@ -175,8 +163,8 @@
  * Extra movement of Y axis. Can help with probing more of the bed.
  * Set both to 0 (zero) if you do not have a Z-Probe.
  */
-#define XTRA_BED_FRONT    55  // Distance bed can move towards the front past Y = 200 (Y=280 for large bed)
-#define XTRA_BED_BACK     5  // Distance bed can move towards the back past Y = 0
+#define XTRA_BED_FRONT    0  // Distance bed can move towards the front past Y = 200
+#define XTRA_BED_BACK     0  // Distance bed can move towards the back past Y = 0
 
 /************************ END OF EASY CONFIG ***************************
 //======================================================================
@@ -754,9 +742,9 @@
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
 #if ENABLED(DUAL_EXTRUDER)
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 1600, E0_STEPS, E1_STEPS }
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.2, 80, 1600, E0_STEPS, E1_STEPS }
 #else
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 1600, E0_STEPS }
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.2, 80, 1600, E0_STEPS }
 #endif
 
 /**
@@ -1056,7 +1044,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE + XTRA_BED_RIGHT
 #define Y_MAX_POS Y_BED_SIZE + XTRA_BED_FRONT
-#define Z_MAX_POS 180
+#define Z_MAX_POS 200
 
 // If enabled, axes won't move below MIN_POS in response to movement commands.
 #define MIN_SOFTWARE_ENDSTOPS
