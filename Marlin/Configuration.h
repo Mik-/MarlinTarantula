@@ -33,8 +33,8 @@
  * Equipment options
  */
 //#define LARGE_BED
-//#define SDSUPPORT
-#define CHANGE_Y_DIRECTION    // If your bed homes in the wrong direction front to back, enable this.
+#define SDSUPPORT
+//#define CHANGE_Y_DIRECTION    // If your bed homes in the wrong direction front to back, enable this.
 //#define CHANGE_X_DIRECTION    // If your X carriage homes in the wrong direction left to right, enable this.
 //#define CHANGE_Z_DIRECTION    // If your Z homes in the wrong direction bottom to top, enable this.
 //#define HOTEND_E3DV6        // Genuine E3D v6 hotend. Also enables Fan Soft PWM
@@ -47,29 +47,29 @@
  * Offset from endpoints to get nozzle to 0,0 (front/left of bed)
  * (How to center prints: https://github.com/JimBrown/MarlinTarantula/wiki/How-to-center-your-prints-(EasyConfig))
  */
-#define NOZZLE_X          -2
-#define NOZZLE_Y          -4
+#define NOZZLE_X          0
+#define NOZZLE_Y          0
 
 /**
  * Primary Extruder steps per mm (plugged in to E0 port on controller)
  * (How to calibrate: https://toms3d.org/2014/04/06/3d-printing-guides-calibrating-your-extruder/)
  */
-#define E0_STEPS      97.097 // Stock extruder. If you have a Tevo Titan, try 400 then calibrate.
-//#define CHANGE_E0_DIRECTION   // If your extruder is going backwards, enable this.
+#define E0_STEPS      409.00  // Stock extruder. If you have a Tevo Titan, try 400 then calibrate.
+#define CHANGE_E0_DIRECTION   // If your extruder is going backwards, enable this.
 
 /**
  * Z-Probe type (must be none or one of them)
  */
-#define BLTOUCH
+//#define BLTOUCH
 //#define SN04          // Green sensor
 //#define INDUCTIVE_NO  // Normally open inductive sensor
 //#define INDUCTIVE_NC  // Normally closed inductive sensor
-//#define SERVO_PROBE   // Endstop switch on rotating arm. Set servo angles!
+#define SERVO_PROBE     // Endstop switch on rotating arm. Set servo angles!
 
 /**
  * Servo probe deploy and stow angles
  */
-#define SERVO_DEPLOY    70
+#define SERVO_DEPLOY    90
 #define SERVO_STOW      0
 
 /**
@@ -77,30 +77,30 @@
  * Use only one of Left/Right and Front/Behind. Others must be 0 (zero)
  * If you have a dual nozzle the offsets are calculated from the primary nozzle (the one plugged in to E0)
  */
-#define SENSOR_LEFT        1
+#define SENSOR_LEFT        10
 #define SENSOR_RIGHT       0
-#define SENSOR_FRONT       36
+#define SENSOR_FRONT       67
 #define SENSOR_BEHIND      0
 
 /**
  * Bed leveling type (see: https://github.com/JimBrown/MarlinTarantula/wiki/Bed-leveling-types-(EasyConfig))
  */
 //#define TRIPOINT
-//#define LINEAR
+#define LINEAR
 //#define BILINEAR
-#define UBL
+//#define UBL
 //#define MANUAL
 
 /**
  * Number of grid points in each direction
  * Minimum 3. Maximum 15 for UBL. Maximum 7 for MANUAL
  */
-#define GRID_POINTS        15
+#define GRID_POINTS        3
 
 /**
  * Margin around perimiter of bed for probing (will not probe outside this margin)
  */
-#define BED_MARGIN         0
+#define BED_MARGIN         15
 
 /**
  * Enable this to turn on support for two extruders
@@ -163,7 +163,7 @@
  * Extra movement of Y axis. Can help with probing more of the bed.
  * Set both to 0 (zero) if you do not have a Z-Probe.
  */
-#define XTRA_BED_FRONT    0  // Distance bed can move towards the front past Y = 200
+#define XTRA_BED_FRONT    15 // Distance bed can move towards the front past Y = 200
 #define XTRA_BED_BACK     0  // Distance bed can move towards the back past Y = 0
 
 /************************ END OF EASY CONFIG ***************************
@@ -742,9 +742,9 @@
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
 #if ENABLED(DUAL_EXTRUDER)
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.2, 80, 1600, E0_STEPS, E1_STEPS }
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 1600, E0_STEPS, E1_STEPS }
 #else
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.2, 80, 1600, E0_STEPS }
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 1600, E0_STEPS }
 #endif
 
 /**
