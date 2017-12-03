@@ -47,8 +47,8 @@
  * Offset from endpoints to get nozzle to 0,0 (front/left of bed)
  * (How to center prints: https://github.com/JimBrown/MarlinTarantula/wiki/How-to-center-your-prints-(EasyConfig))
  */
-#define NOZZLE_X          0
-#define NOZZLE_Y          0
+#define NOZZLE_X          -3
+#define NOZZLE_Y          -15
 
 /**
  * Primary Extruder steps per mm (plugged in to E0 port on controller)
@@ -77,9 +77,9 @@
  * Use only one of Left/Right and Front/Behind. Others must be 0 (zero)
  * If you have a dual nozzle the offsets are calculated from the primary nozzle (the one plugged in to E0)
  */
-#define SENSOR_LEFT        10
+#define SENSOR_LEFT        12
 #define SENSOR_RIGHT       0
-#define SENSOR_FRONT       67
+#define SENSOR_FRONT       48
 #define SENSOR_BEHIND      0
 
 /**
@@ -100,7 +100,7 @@
 /**
  * Margin around perimiter of bed for probing (will not probe outside this margin)
  */
-#define BED_MARGIN         15
+#define BED_MARGIN         10
 
 /**
  * Enable this to turn on support for two extruders
@@ -129,18 +129,18 @@
 /**
  * TEVO Tarantula Custom PID Settings - Stock Hotend
  */
-#define  hot_Kp 11.20
-#define  hot_Ki 0.60
-#define  hot_Kd 52.53
+#define  hot_Kp 19.27
+#define  hot_Ki 1.34
+#define  hot_Kd 69.07
 // FIND YOUR OWN: "M303 E0 C8 S200" to run autotune on the hotend at 200 degreesC for 8 cycles.
 // More info here: http://reprap.org/wiki/PID_Tuning
 
 /**
  * TEVO Tarantula Custom PID Settings - Stock Heatbed
  */
-#define  bed_Kp 841.21
-#define  bed_Ki 165.63
-#define  bed_Kd 1068.13
+#define  bed_Kp 217.19
+#define  bed_Ki 17.44
+#define  bed_Kd 676.11
 // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 // More info here: http://reprap.org/wiki/PID_Tuning
 
@@ -163,7 +163,7 @@
  * Extra movement of Y axis. Can help with probing more of the bed.
  * Set both to 0 (zero) if you do not have a Z-Probe.
  */
-#define XTRA_BED_FRONT    15 // Distance bed can move towards the front past Y = 200
+#define XTRA_BED_FRONT    0 // Distance bed can move towards the front past Y = 200
 #define XTRA_BED_BACK     0  // Distance bed can move towards the back past Y = 0
 
 /************************ END OF EASY CONFIG ***************************
