@@ -47,8 +47,8 @@
 // If POWER_SUPPLY is specified, always hijack Servo 3
 //
 #if POWER_SUPPLY > 0
-  #define SERVO3_PIN      -1
-  #define PS_ON_PIN        4
+  //#define SERVO3_PIN      -1
+  #define PS_ON_PIN        12
 #endif
 
 #include "pins_RAMPS.h"
