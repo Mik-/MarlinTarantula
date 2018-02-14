@@ -14,7 +14,7 @@
   different Tevo Tarantula variants as possible.  This will always be
   a work in progress. Email me if you have any questions, suggestions,
   or if you encounter problems when using Easy Config.
-
+p
     This is a Marlin 1.1.x configuration file. I will update this as
   new versions of Marlin are released.
 
@@ -48,7 +48,7 @@
  * (How to center prints: https://github.com/JimBrown/MarlinTarantula/wiki/How-to-center-your-prints-(EasyConfig))
  */
 #define NOZZLE_X          -3
-#define NOZZLE_Y          -26
+#define NOZZLE_Y          -21
 
 /**
  * Primary Extruder steps per mm (plugged in to E0 port on controller)
@@ -129,9 +129,9 @@
 /**
  * TEVO Tarantula Custom PID Settings - Stock Hotend
  */
-#define  hot_Kp 19.27
-#define  hot_Ki 1.34
-#define  hot_Kd 69.07
+#define  hot_Kp 17,83
+#define  hot_Ki 1,25
+#define  hot_Kd 63,53
 // FIND YOUR OWN: "M303 E0 C8 S200" to run autotune on the hotend at 200 degreesC for 8 cycles.
 // More info here: http://reprap.org/wiki/PID_Tuning
 
@@ -765,9 +765,9 @@
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
 #if ENABLED(DUAL_EXTRUDER)
-  #define DEFAULT_MAX_ACCELERATION      { 500,  500, 50, 500, 500 }
+  #define DEFAULT_MAX_ACCELERATION      { 2000,  2000, 50, 1500, 1500 }
 #else
-  #define DEFAULT_MAX_ACCELERATION      { 500,  500, 50, 500 }
+  #define DEFAULT_MAX_ACCELERATION      { 2000,  2000, 50, 1500 }
 #endif
 
 /**
@@ -778,9 +778,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          500    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  500    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   500    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          800    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  800    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk (mm/s)
@@ -790,8 +790,8 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define DEFAULT_XJERK                  4.0
-#define DEFAULT_YJERK                  7.0
+#define DEFAULT_XJERK                  8.0
+#define DEFAULT_YJERK                  8.0
 #define DEFAULT_ZJERK                  0.2
 #define DEFAULT_EJERK                  2.5
 
@@ -1422,8 +1422,8 @@
   #define NOZZLE_CLEAN_TRIANGLES  3
 
   // Specify positions as { X, Y, Z }
-  #define NOZZLE_CLEAN_START_POINT { 0, -20, (Z_MIN_POS + 1)}
-  #define NOZZLE_CLEAN_END_POINT   {30, -25, (Z_MIN_POS + 1)}
+  #define NOZZLE_CLEAN_START_POINT { 0, -16, (Z_MIN_POS + 1)}
+  #define NOZZLE_CLEAN_END_POINT   {30, -21, (Z_MIN_POS + 1)}
 
   // Circular pattern radius
   #define NOZZLE_CLEAN_CIRCLE_RADIUS 6.5
